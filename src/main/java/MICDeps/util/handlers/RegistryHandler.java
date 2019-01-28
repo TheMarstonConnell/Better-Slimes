@@ -7,7 +7,9 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.BiomeDictionary;
@@ -27,6 +29,7 @@ public class RegistryHandler {
 	}
 
 	public static void preInitRegistries(FMLPreInitializationEvent event) {
+		
 		ConfigHandler.registerConfig(event);
 
 	}
@@ -63,9 +66,6 @@ public class RegistryHandler {
 				if (!s.equals(event.getEntity())) {
 					s.setLocationAndAngles(event.getEntity().posX, event.getEntity().posY, event.getEntity().posZ,
 							event.getEntity().rotationYaw, event.getEntity().rotationPitch);
-					Random rand = new Random();
-					int num = rand.nextInt(3);
-					if(num == 3) num = 4;
 					s.onInitialSpawn(event.getWorld().getDifficultyForLocation(event.getEntity().getPosition()), (IEntityLivingData) null);
 					if (!event.getWorld().isRemote) {
 						event.getWorld().spawnEntity(s);

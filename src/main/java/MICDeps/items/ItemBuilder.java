@@ -16,8 +16,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber()
 public class ItemBuilder {
 
-	public static ArrayList<Item> ModItems;
-	public static String modID;
+	public ArrayList<Item> ModItems;
+	public String modID;
 	
 	public ItemBuilder(String modID) {
 		ModItems = new ArrayList<Item>();
@@ -42,9 +42,10 @@ public class ItemBuilder {
 	@SubscribeEvent
 	public void register(final RegistryEvent.Register<Item> event)
 	{
+		System.out.println("registering");
 		final IForgeRegistry<Item> registry = event.getRegistry();
 		
-		for (final Item item : getItemList())
+		for (Item item : getItemList())
 		{
 			registry.register(item);
 			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(modID + ":" + item.getRegistryName().toString().replace(modID + ":", ""), "inventory"));

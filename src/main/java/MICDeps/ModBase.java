@@ -52,6 +52,7 @@ public class ModBase {
 		logger = event.getModLog();
 		eventHandler = new RegistryHandler();
 		MinecraftForge.EVENT_BUS.register(eventHandler);
+		MinecraftForge.EVENT_BUS.register(itemBuilder);
 		eventHandler.preInitRegistries(event);
 		proxy.preInit(event);
 	}

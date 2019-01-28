@@ -6,3 +6,9 @@ entity.black_slime.name=Black Slime
 entity.ice_slime.name=Ice Slime
 entity.jungle_slime.name=Jungle Slime
 entity.sand_slime.name=Sand Slime
+
+item.blue_slime.name=Blue Slimeball
+item.red_slime.name=Red Slimeball
+item.black_slime.name=Black Slimeball
+item.yellow_slime.name=Yellow Slimeball
+item.purple_slime.name=Purple Slimeball

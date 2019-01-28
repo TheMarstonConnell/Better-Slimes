@@ -33,8 +33,8 @@ public class ClientProxy extends CommonProxy {
 		if (event.player.world.isRemote && event.player == FMLClientHandler.instance().getClientPlayerEntity()) {
 			MinecraftForge.EVENT_BUS.unregister(this);
 			if (ConfigHandler.startupMessage) {
-				event.player.sendMessage(new TextComponentString(TextFormatting.GOLD
-						+ "Thank you for installing BioCraft by milomaz1, follow me on twitter @MarstonConnell for updates!"));
+				event.player.sendMessage(new TextComponentString(TextFormatting.GREEN
+						+ "Thank you for installing Better Slimes by milomaz1, follow me on twitter @MarstonConnell for updates!"));
 				event.player.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 2.5F, 1.0F);
 			}
 		}

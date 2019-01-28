@@ -19,7 +19,6 @@ public class ItemBase extends Item{
 		setRegistryName(name);
 		
 		setCreativeTab(tab);
-		
 		itemBuilder.addItem(this);
 		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(itemBuilder.modID + ":" + name, "inventory"));
 	}
