@@ -21,11 +21,12 @@ public class BlackSlime extends EntityBetterSlime {
 
 	public BlackSlime(World worldIn) {
 		super(worldIn);
+		this.setAttackModifier(3);
+		this.setHealthModifier(3);
 	}
 
 	@Override
 	protected EntityBetterSlime createInstance() {
-		
 		return new BlackSlime(this.world);
 	}
 

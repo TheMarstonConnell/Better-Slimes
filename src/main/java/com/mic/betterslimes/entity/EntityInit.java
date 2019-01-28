@@ -49,11 +49,11 @@ public class EntityInit {
 		EntityRegistry.addSpawn(JungleSlime.class, 20, 1, 6, EnumCreatureType.MONSTER, Biomes.MUTATED_JUNGLE_EDGE);
 
 		for (Biome b : BiomeDictionary.getBiomes(BiomeDictionary.Type.SNOWY)) {
-			System.out.println(b.getBiomeName());
+//			System.out.println(b.getBiomeName());
 			EntityRegistry.addSpawn(IceSlime.class, 8, 1, 3, EnumCreatureType.MONSTER, b);
 		}
 		for (Biome b : BiomeDictionary.getBiomes(BiomeDictionary.Type.DRY)) {
-			System.out.println(b.getBiomeName());
+//			System.out.println(b.getBiomeName());
 			EntityRegistry.addSpawn(SandSlime.class, 20, 1, 6, EnumCreatureType.MONSTER, b);
 		}
 		for (Biome b : ForgeRegistries.BIOMES.getValuesCollection()) {

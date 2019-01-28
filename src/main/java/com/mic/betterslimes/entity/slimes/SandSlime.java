@@ -14,6 +14,8 @@ public class SandSlime extends EntityBetterSlime{
 
 	public SandSlime(World worldIn) {
 		super(worldIn);
+		this.setAttackModifier(3);
+		this.setHealthModifier(1.8);
 	}
 	
 	@Override

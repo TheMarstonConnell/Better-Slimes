@@ -20,6 +20,8 @@ public class RedSlime extends EntityBetterSlime{
 
 	public RedSlime(World worldIn) {
 		super(worldIn);
+		this.setAttackModifier(1.5);
+		this.setHealthModifier(1.5);
 	}
 	
 	@Override

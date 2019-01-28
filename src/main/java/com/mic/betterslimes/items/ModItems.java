@@ -14,14 +14,16 @@ public class ModItems {
 	Item black_slime;
 	
 	public ModItems(ItemBuilder i) {
-		blue_slime = new ItemBase(i, "blue_slime");
+		Item null_item = new ItemBase(i, "null_item", null);
 		red_slime = new ItemBase(i, "red_slime");
 		purple_slime = new ItemBase(i, "purple_slime");
 		yellow_slime = new ItemBase(i, "yellow_slime");
 		black_slime = new ItemBase(i, "black_slime");
+		blue_slime = new ItemBase(i, "blue_slime");
 	}
 	
 	public void oreDict() {
+		System.out.println("Registering Ore Dictionary Items ********************************");
 		OreDictionary.registerOre("slimeball", blue_slime);
 		OreDictionary.registerOre("slimeball", black_slime);
 		OreDictionary.registerOre("slimeball", yellow_slime);

@@ -20,6 +20,8 @@ public class JungleSlime extends EntityBetterSlime{
 
 	public JungleSlime(World worldIn) {
 		super(worldIn);
+		this.setAttackModifier(2.5);
+		this.setHealthModifier(2.5);
 	}
 	
 	@Override

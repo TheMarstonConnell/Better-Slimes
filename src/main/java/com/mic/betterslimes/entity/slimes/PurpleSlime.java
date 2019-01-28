@@ -20,6 +20,8 @@ public class PurpleSlime extends EntityBetterSlime{
 
 	public PurpleSlime(World worldIn) {
 		super(worldIn);
+		this.setAttackModifier(2.5);
+		this.setHealthModifier(2);
 	}
 	
 	@Override

@@ -47,6 +47,7 @@ public class ItemBuilder {
 		
 		for (Item item : getItemList())
 		{
+			
 			registry.register(item);
 			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(modID + ":" + item.getRegistryName().toString().replace(modID + ":", ""), "inventory"));
 		}

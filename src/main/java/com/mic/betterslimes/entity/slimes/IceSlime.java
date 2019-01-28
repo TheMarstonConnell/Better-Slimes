@@ -14,6 +14,9 @@ public class IceSlime extends EntityBetterSlime{
 
 	public IceSlime(World worldIn) {
 		super(worldIn);
+		this.setAttackModifier(2.5);
+		this.setHealthModifier(2);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue((double)(0.2F + 0.1F * (float)getSlimeSize() * 2));
 	}
 	
 	@Override

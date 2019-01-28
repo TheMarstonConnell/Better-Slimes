@@ -20,6 +20,8 @@ public class YellowSlime extends EntityBetterSlime{
 
 	public YellowSlime(World worldIn) {
 		super(worldIn);
+		this.setAttackModifier(2);
+		this.setHealthModifier(1.5);
 	}
 	
 	@Override

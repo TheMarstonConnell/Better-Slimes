@@ -19,6 +19,7 @@ import com.mic.betterslimes.items.ModItems;
 
 import MICDeps.ModBase;
 import MICDeps.items.ItemBuilder;
+import MICDeps.util.handlers.ConfigHandler;
 
 @Mod(modid = BetterSlimes.MODID, name = BetterSlimes.NAME, version = BetterSlimes.VERSION)
 public class BetterSlimes extends ModBase {
@@ -35,18 +36,22 @@ public class BetterSlimes extends ModBase {
 	@Override
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) { 
+		ConfigHandler cfh = new ConfigHandler(this, MODID);
 		itemBuilder = new ItemBuilder(MODID);
 		items = new ModItems(itemBuilder);
 		EntityInit.registerEntity();
 		RenderHandler.registerEntityRenders(MODID);
+
 		super.preInit(event);
 		
 	}
 
 	@Override
+	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		super.init(event);
 		items.oreDict();
+		super.init(event);
+		
 
 	}
 	
