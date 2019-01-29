@@ -1,5 +1,7 @@
 package MICDeps.proxy;
 
+import com.mic.betterslimes.RenderHandler;
+
 import MICDeps.util.handlers.RegistryHandler;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -31,6 +33,10 @@ public class CommonProxy {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+
+	}
+	
+	public void registerRenders() {
 
 	}
 	

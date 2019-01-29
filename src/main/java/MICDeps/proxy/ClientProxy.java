@@ -1,5 +1,7 @@
 package MICDeps.proxy;
 
+import com.mic.betterslimes.RenderHandler;
+
 import MICDeps.util.handlers.ConfigHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -24,7 +26,10 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void registerItemRenderer(Item item, int meta, String id) {
 
-//		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
+		ModelLoader.setCustomModelResourceLocation(item, 0,
+				new ModelResourceLocation(
+						"betterslimes" + ":" + item.getRegistryName().toString().replace("betterslimes" + ":", ""),
+						"inventory"));
 	}
 
 	@SubscribeEvent
@@ -44,6 +49,12 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public String localize(String unlocalized, Object... args) {
 		return I18n.format(unlocalized, args);
+	}
+
+	@Override
+	public void registerRenders() {
+		RenderHandler.registerEntityRenders("betterslimes");
+
 	}
 
 	@Override

@@ -16,6 +16,7 @@ public class EntityBetterSlime extends EntitySlime{
 
 	public double attackMod = 1;
 	public double healthMod = 1;
+	public double speedMod = 1;
 	
 	public EntityBetterSlime(World worldIn) {
 		
@@ -41,12 +42,17 @@ public class EntityBetterSlime extends EntitySlime{
 		setSlimeSize(getSlimeSize(), true);
 	}
 	
+	public void setSpeedModifier(double mod) {
+		this.speedMod = mod;
+		setSlimeSize(getSlimeSize(), true);
+	}
+	
 	@Override
 	public void setSlimeSize(int size, boolean resetHealth) {
 		super.setSlimeSize(size, resetHealth);
 		
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue((double)(size * size * attackMod));
-        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue((double)(0.2F + 0.1F * (float)size * healthMod));
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue((double)(0.2F + 0.1F * (float)size * speedMod));
 
         if (resetHealth)
         {
@@ -54,6 +60,12 @@ public class EntityBetterSlime extends EntitySlime{
         }
         
 	}
+	
+	@Override
+	protected boolean canDamagePlayer()
+    {
+        return true;
+    }
 	
 	
 

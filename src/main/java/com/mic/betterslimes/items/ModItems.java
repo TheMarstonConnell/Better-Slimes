@@ -23,7 +23,6 @@ public class ModItems {
 	}
 	
 	public void oreDict() {
-		System.out.println("Registering Ore Dictionary Items ********************************");
 		OreDictionary.registerOre("slimeball", blue_slime);
 		OreDictionary.registerOre("slimeball", black_slime);
 		OreDictionary.registerOre("slimeball", yellow_slime);

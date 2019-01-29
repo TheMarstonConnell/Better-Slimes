@@ -60,7 +60,7 @@ public class RedSlime extends EntityBetterSlime{
 	
 	@Override
 	protected int getAttackStrength() {
-		return (int) (super.getAttackStrength() * 1.5);
+		return (int) (super.getAttackStrength() * attackMod);
 	}
 	
 	@Override

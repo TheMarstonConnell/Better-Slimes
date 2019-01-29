@@ -76,7 +76,7 @@ public class YellowSlime extends EntityBetterSlime{
 	
 	@Override
 	protected int getAttackStrength() {
-		return (int) (super.getAttackStrength() * 2.0);
+		return (int) (super.getAttackStrength() * attackMod);
 	}
 	
 	@Override

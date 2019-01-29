@@ -5,18 +5,23 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.mic.betterslimes.RenderHandler;
+
+import MICDeps.ModBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod.EventBusSubscriber()
 public class ItemBuilder {
 
-	public ArrayList<Item> ModItems;
+	public static ArrayList<Item> ModItems;
 	public String modID;
 	
 	public ItemBuilder(String modID) {
@@ -30,7 +35,7 @@ public class ItemBuilder {
 		ModItems.add(itemToAdd);
 	}
 	
-	public List<Item> getItemList(){
+	public static List<Item> getItemList(){
 		return ModItems;
 	}
 	
@@ -47,11 +52,17 @@ public class ItemBuilder {
 		
 		for (Item item : getItemList())
 		{
-			
 			registry.register(item);
-			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(modID + ":" + item.getRegistryName().toString().replace(modID + ":", ""), "inventory"));
+			ModBase.proxy.registerItemRenderer(item, 0, "inventory");
+			
+//			registerModel(item);
 		}
 		
+	}
+	
+	@SideOnly(Side.CLIENT)
+	private void registerModel(Item item) {
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(modID + ":" + item.getRegistryName().toString().replace(modID + ":", ""), "inventory"));
 	}
 	
 }

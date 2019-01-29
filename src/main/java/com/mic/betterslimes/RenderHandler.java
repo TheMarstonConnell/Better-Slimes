@@ -9,8 +9,12 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class RenderHandler {
+	
+	
 	public static void registerEntityRenders(String modID) {
 		
 		
@@ -65,6 +69,20 @@ public class RenderHandler {
 				@Override
 				public Render<? super IceSlime> createRenderFor(RenderManager manager) {
 					return new RenderSlime(modID, "ice_slime", manager);
+				}
+			});
+			
+			RenderingRegistry.registerEntityRenderingHandler(SpectralSlime.class, new IRenderFactory<SpectralSlime>() {
+				@Override
+				public Render<? super SpectralSlime> createRenderFor(RenderManager manager) {
+					return new RenderSlime(modID, "spectral_slime", manager);
+				}
+			});
+			
+			RenderingRegistry.registerEntityRenderingHandler(KingSlime.class, new IRenderFactory<KingSlime>() {
+				@Override
+				public Render<? super KingSlime> createRenderFor(RenderManager manager) {
+					return new RenderSlime(modID, "king_slime", manager);
 				}
 			});
 		

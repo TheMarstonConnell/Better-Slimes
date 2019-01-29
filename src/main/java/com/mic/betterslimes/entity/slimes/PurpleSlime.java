@@ -69,7 +69,7 @@ public class PurpleSlime extends EntityBetterSlime{
 	
 	@Override
 	protected int getAttackStrength() {
-		return (int) (super.getAttackStrength() * 2.5);
+		return (int) (super.getAttackStrength() * attackMod);
 	}
 	
 	@Nullable

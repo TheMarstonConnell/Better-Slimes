@@ -14,9 +14,9 @@ public class IceSlime extends EntityBetterSlime{
 
 	public IceSlime(World worldIn) {
 		super(worldIn);
-		this.setAttackModifier(2.5);
+		this.setAttackModifier(2);
 		this.setHealthModifier(2);
-        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue((double)(0.2F + 0.1F * (float)getSlimeSize() * 2));
+		this.setSpeedModifier(2.5);
 	}
 	
 	@Override
@@ -27,7 +27,7 @@ public class IceSlime extends EntityBetterSlime{
 	
 	@Override
 	protected int getAttackStrength() {
-		return (int) (super.getAttackStrength() * 2.5);
+		return (int) (super.getAttackStrength() * attackMod);
 	}
 	
 	@Override

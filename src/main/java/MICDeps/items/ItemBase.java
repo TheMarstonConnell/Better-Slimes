@@ -20,7 +20,7 @@ public class ItemBase extends Item{
 		
 		setCreativeTab(tab);
 		itemBuilder.addItem(this);
-		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(itemBuilder.modID + ":" + name, "inventory"));
+//		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(itemBuilder.modID + ":" + name, "inventory"));
 	}
 	
 	/**

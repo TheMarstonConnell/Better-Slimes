@@ -3,6 +3,7 @@ package com.mic.betterslimes.entity;
 import com.mic.betterslimes.entity.slimes.*;
 
 import MICDeps.ModBase;
+import MICDeps.util.handlers.ConfigHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
@@ -29,7 +30,7 @@ public class EntityInit {
 
 	public static void registerEntity() {
 		int view = 45;
-		
+
 		registerEntity("blue_slime", BlueSlime.class, 111, view, 1186255, 255);
 		registerEntity("red_slime", RedSlime.class, 112, view, 12072506, 16711680);
 		registerEntity("yellow_slime", YellowSlime.class, 113, view, 13417984, 16776960);
@@ -38,30 +39,38 @@ public class EntityInit {
 		registerEntity("ice_slime", IceSlime.class, 116, view, 4293887, 4306175);
 		registerEntity("jungle_slime", JungleSlime.class, 117, view, 30464, 55808);
 		registerEntity("sand_slime", SandSlime.class, 118, view, 13024949, 14802613);
+		registerEntity("spectral_slime", SpectralSlime.class, 119, view, 10106269, 000000);
+		registerEntity("king_slime", KingSlime.class, 120, view, 1186255, 16776960);
 		addToBiomes();
 	}
 
 	public static void addToBiomes() {
-		EntityRegistry.addSpawn(JungleSlime.class, 20, 1, 6, EnumCreatureType.MONSTER, Biomes.JUNGLE);
-		EntityRegistry.addSpawn(JungleSlime.class, 20, 1, 6, EnumCreatureType.MONSTER, Biomes.JUNGLE_EDGE);
-		EntityRegistry.addSpawn(JungleSlime.class, 20, 1, 6, EnumCreatureType.MONSTER, Biomes.JUNGLE_HILLS);
-		EntityRegistry.addSpawn(JungleSlime.class, 20, 1, 6, EnumCreatureType.MONSTER, Biomes.MUTATED_JUNGLE);
-		EntityRegistry.addSpawn(JungleSlime.class, 20, 1, 6, EnumCreatureType.MONSTER, Biomes.MUTATED_JUNGLE_EDGE);
+		EntityRegistry.addSpawn(JungleSlime.class, ConfigHandler.jungleSlime, 1, 6, EnumCreatureType.MONSTER, Biomes.JUNGLE);
+		EntityRegistry.addSpawn(JungleSlime.class, ConfigHandler.jungleSlime, 1, 6, EnumCreatureType.MONSTER, Biomes.JUNGLE_EDGE);
+		EntityRegistry.addSpawn(JungleSlime.class, ConfigHandler.jungleSlime, 1, 6, EnumCreatureType.MONSTER, Biomes.JUNGLE_HILLS);
+		EntityRegistry.addSpawn(JungleSlime.class, ConfigHandler.jungleSlime, 1, 6, EnumCreatureType.MONSTER, Biomes.MUTATED_JUNGLE);
+		EntityRegistry.addSpawn(JungleSlime.class, ConfigHandler.jungleSlime, 1, 6, EnumCreatureType.MONSTER, Biomes.MUTATED_JUNGLE_EDGE);
 
+		EntityRegistry.addSpawn(SpectralSlime.class, ConfigHandler.skySlime, 1, 1, EnumCreatureType.MONSTER, Biomes.SKY);
+		
 		for (Biome b : BiomeDictionary.getBiomes(BiomeDictionary.Type.SNOWY)) {
-//			System.out.println(b.getBiomeName());
-			EntityRegistry.addSpawn(IceSlime.class, 8, 1, 3, EnumCreatureType.MONSTER, b);
+			// System.out.println(b.getBiomeName());
+			if (!(b.equals(Biomes.HELL) || b.equals(Biomes.SKY)))
+				EntityRegistry.addSpawn(IceSlime.class, ConfigHandler.iceSlime, 1, 3, EnumCreatureType.MONSTER, b);
 		}
 		for (Biome b : BiomeDictionary.getBiomes(BiomeDictionary.Type.DRY)) {
-//			System.out.println(b.getBiomeName());
-			EntityRegistry.addSpawn(SandSlime.class, 20, 1, 6, EnumCreatureType.MONSTER, b);
+			// System.out.println(b.getBiomeName());
+			if (!(b.equals(Biomes.HELL) || b.equals(Biomes.SKY)))
+				EntityRegistry.addSpawn(SandSlime.class, ConfigHandler.sandSlime, 1, 6, EnumCreatureType.MONSTER, b);
 		}
 		for (Biome b : ForgeRegistries.BIOMES.getValuesCollection()) {
-			EntityRegistry.addSpawn(BlueSlime.class, 14, 1, 6, EnumCreatureType.MONSTER, b);
-			EntityRegistry.addSpawn(RedSlime.class, 8, 1, 5, EnumCreatureType.MONSTER, b);
-			EntityRegistry.addSpawn(YellowSlime.class, 6, 1, 4, EnumCreatureType.MONSTER, b);
-			EntityRegistry.addSpawn(PurpleSlime.class, 4, 1, 4, EnumCreatureType.MONSTER, b);
-			EntityRegistry.addSpawn(BlackSlime.class, 10, 1, 6, EnumCreatureType.MONSTER, b);
+			if (!(b.equals(Biomes.HELL) || b.equals(Biomes.SKY))) {
+				EntityRegistry.addSpawn(BlueSlime.class, ConfigHandler.blueSlime, 1, 6, EnumCreatureType.MONSTER, b);
+				EntityRegistry.addSpawn(RedSlime.class, ConfigHandler.redSlime, 1, 5, EnumCreatureType.MONSTER, b);
+				EntityRegistry.addSpawn(YellowSlime.class, ConfigHandler.yellowSlime, 1, 4, EnumCreatureType.MONSTER, b);
+				EntityRegistry.addSpawn(PurpleSlime.class, ConfigHandler.purpleSlime, 1, 4, EnumCreatureType.MONSTER, b);
+				EntityRegistry.addSpawn(BlackSlime.class, ConfigHandler.blackSlime, 1, 6, EnumCreatureType.MONSTER, b);
+			}
 		}
 	}
 }

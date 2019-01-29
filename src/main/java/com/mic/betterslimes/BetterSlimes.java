@@ -7,6 +7,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
@@ -31,6 +33,8 @@ public class BetterSlimes extends ModBase {
 	public static ResourceLocation blackSlimeLT = LootTableList.register(new ResourceLocation("betterslimes","black_slime"));
 	public static ResourceLocation yellowSlimeLT = LootTableList.register(new ResourceLocation("betterslimes","yellow_slime"));
 	public static ResourceLocation purpleSlimeLT = LootTableList.register(new ResourceLocation("betterslimes","purple_slime"));
+	public static ResourceLocation skySlimeLT = LootTableList.register(new ResourceLocation("betterslimes","sky_slime"));
+	public static ResourceLocation kingSlimeLT = LootTableList.register(new ResourceLocation("betterslimes","king_slime"));
 
 	
 	@Override
@@ -40,7 +44,7 @@ public class BetterSlimes extends ModBase {
 		itemBuilder = new ItemBuilder(MODID);
 		items = new ModItems(itemBuilder);
 		EntityInit.registerEntity();
-		RenderHandler.registerEntityRenders(MODID);
+		proxy.registerRenders();
 
 		super.preInit(event);
 		
@@ -54,6 +58,7 @@ public class BetterSlimes extends ModBase {
 		
 
 	}
+
 	
 
 }

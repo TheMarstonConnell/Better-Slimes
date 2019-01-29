@@ -26,7 +26,7 @@ public class SandSlime extends EntityBetterSlime{
 	
 	@Override
 	protected int getAttackStrength() {
-		return (int) (super.getAttackStrength() * 3.0);
+		return (int) (super.getAttackStrength() * attackMod);
 	}
 	
 	@Override
