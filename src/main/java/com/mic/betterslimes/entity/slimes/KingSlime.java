@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import com.mic.betterslimes.BetterSlimes;
 import com.mic.betterslimes.entity.EntityBetterSlime;
+import com.mic.betterslimes.entity.ISpecialSlime;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.boss.EntityWither;
@@ -28,7 +29,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.BiomeDictionary;
 
-public class KingSlime extends EntityBetterSlime {
+public class KingSlime extends EntityBetterSlime implements ISpecialSlime{
 
 	private final BossInfoServer bossInfo = (BossInfoServer) (new BossInfoServer(this.getDisplayName(),
 			BossInfo.Color.BLUE, BossInfo.Overlay.PROGRESS));

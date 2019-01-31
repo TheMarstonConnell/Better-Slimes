@@ -35,6 +35,8 @@ public class BetterSlimes extends ModBase {
 	public static ResourceLocation purpleSlimeLT = LootTableList.register(new ResourceLocation("betterslimes","purple_slime"));
 	public static ResourceLocation skySlimeLT = LootTableList.register(new ResourceLocation("betterslimes","sky_slime"));
 	public static ResourceLocation kingSlimeLT = LootTableList.register(new ResourceLocation("betterslimes","king_slime"));
+	public static ResourceLocation ironSlimeLT = LootTableList.register(new ResourceLocation("betterslimes","iron_slime"));
+	public static ResourceLocation goldSlimeLT = LootTableList.register(new ResourceLocation("betterslimes","gold_slime"));
 
 	
 	@Override

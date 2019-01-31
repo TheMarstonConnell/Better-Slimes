@@ -8,6 +8,9 @@ entity.jungle_slime.name=Jungle Slime
 entity.sand_slime.name=Sand Slime
 entity.king_slime.name=King Slime
 entity.spectral_slime.name=Spectral Slime
+entity.iron_slime.name=Iron Slime
+entity.gold_slime.name=Gold Slime
+entity.knight_slime.name=Knight Slime
 
 item.blue_slime.name=Blue Slimeball
 item.red_slime.name=Red Slimeball

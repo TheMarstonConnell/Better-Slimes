@@ -85,6 +85,19 @@ public class RenderHandler {
 					return new RenderSlime(modID, "king_slime", manager);
 				}
 			});
+			
+			RenderingRegistry.registerEntityRenderingHandler(IronSlime.class, new IRenderFactory<IronSlime>() {
+				@Override
+				public Render<? super IronSlime> createRenderFor(RenderManager manager) {
+					return new RenderSlime(modID, "iron_slime", manager);
+				}
+			});
+			RenderingRegistry.registerEntityRenderingHandler(GoldSlime.class, new IRenderFactory<GoldSlime>() {
+				@Override
+				public Render<? super GoldSlime> createRenderFor(RenderManager manager) {
+					return new RenderSlime(modID, "gold_slime", manager);
+				}
+			});
 		
 		
 		

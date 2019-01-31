@@ -4,6 +4,7 @@ import javax.annotation.Nullable;
 
 import com.mic.betterslimes.BetterSlimes;
 import com.mic.betterslimes.entity.EntityBetterSlime;
+import com.mic.betterslimes.entity.ISpecialSlime;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.Biomes;
@@ -16,7 +17,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.storage.loot.LootTableList;
 
-public class JungleSlime extends EntityBetterSlime{
+public class JungleSlime extends EntityBetterSlime implements ISpecialSlime{
 
 	public JungleSlime(World worldIn) {
 		super(worldIn);

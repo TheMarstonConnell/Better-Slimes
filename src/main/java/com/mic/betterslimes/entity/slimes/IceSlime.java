@@ -4,13 +4,15 @@ import javax.annotation.Nullable;
 
 import com.mic.betterslimes.BetterSlimes;
 import com.mic.betterslimes.entity.EntityBetterSlime;
+import com.mic.betterslimes.entity.ISpecialSlime;
 
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
 
-public class IceSlime extends EntityBetterSlime{
+public class IceSlime extends EntityBetterSlime implements ISpecialSlime{
 
 	public IceSlime(World worldIn) {
 		super(worldIn);
@@ -28,6 +30,12 @@ public class IceSlime extends EntityBetterSlime{
 	@Override
 	protected int getAttackStrength() {
 		return (int) (super.getAttackStrength() * attackMod);
+	}
+	
+	@Override
+	protected EnumParticleTypes getParticleType() {
+		
+		return EnumParticleTypes.SNOWBALL;
 	}
 	
 	@Override

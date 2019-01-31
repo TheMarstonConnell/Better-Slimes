@@ -13,16 +13,20 @@ public class ConfigHandler {
 	private static String modID;
 	
 	
-	public static int blueSlime;
-	public static int redSlime;
-	public static int yellowSlime;
-	public static int purpleSlime;
-	public static int blackSlime;
-	public static int iceSlime;
-	public static int jungleSlime;
-	public static int sandSlime;
-	public static int skySlime;
-	public static int kingChance;
+	public static int blueSlime = 14;
+	public static int redSlime = 7;
+	public static int yellowSlime = 4;
+	public static int purpleSlime = 2;
+	public static int blackSlime = 80;
+	public static int iceSlime = 8;
+	public static int jungleSlime = 20;
+	public static int sandSlime = 20;
+	public static int skySlime = 12;
+	public static int kingChance = 5;
+	public static int ironSlime = 40;
+	public static int goldSlime = 20;
+	public static int knightSlime = 10;
+
 
 	public ConfigHandler(ModBase mod, String modID) {
 		this.mod = mod;
@@ -47,11 +51,14 @@ public class ConfigHandler {
 		redSlime = config.getInt("Red Slime Spawn Chance", category, 7, 0, 100, "0 for never and 100 for always.");
 		yellowSlime = config.getInt("Yellow Slime Spawn Chance", category, 4, 0, 100, "0 for never and 100 for always.");
 		purpleSlime = config.getInt("Purple Slime Spawn Chance", category, 2, 0, 100, "0 for never and 100 for always.");
-		blackSlime = config.getInt("Black Slime Spawn Chance", category, 10, 0, 100, "0 for never and 100 for always.");
+		blackSlime = config.getInt("Black Slime Spawn Chance", category, 80, 0, 100, "0 for never and 100 for always.");
 		iceSlime = config.getInt("Ice Slime Spawn Chance", category, 8, 0, 100, "0 for never and 100 for always.");
 		jungleSlime = config.getInt("Jungle Slime Spawn Chance", category, 20, 0, 100, "0 for never and 100 for always.");
 		sandSlime = config.getInt("Sand Slime Spawn Chance", category, 20, 0, 100, "0 for never and 100 for always.");
 		skySlime = config.getInt("Spectral Slime Spawn Chance", category, 12, 0, 100, "0 for never and 100 for always.");
+		ironSlime = config.getInt("Iron Slime Spawn Chance", category, 40, 0, 100, "0 for never and 100 for always.");
+		goldSlime = config.getInt("Gold Slime Spawn Chance", category, 20, 0, 100, "0 for never and 100 for always.");
+		knightSlime = config.getInt("Knight Slime Spawn Chance", category, 10, 0, 100, "0 for never and 100 for always.");
 
 		
 		config.save();

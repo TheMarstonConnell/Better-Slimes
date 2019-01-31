@@ -3,6 +3,7 @@ package MICDeps.util.handlers;
 import java.util.List;
 
 import com.mic.betterslimes.entity.EntityBetterSlime;
+import com.mic.betterslimes.entity.ISpecialSlime;
 import com.mic.betterslimes.entity.slimes.*;
 import com.mic.betterslimes.items.ModItems;
 
@@ -159,8 +160,7 @@ public class RegistryHandler {
 	}
 
 	private boolean checkSlime(Entity e) {
-		return (!(e instanceof JungleSlime || e instanceof IceSlime || e instanceof SandSlime
-				|| e instanceof KingSlime));
+		return (!(e instanceof ISpecialSlime));
 	}
 
 }
