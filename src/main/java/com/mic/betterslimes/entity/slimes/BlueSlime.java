@@ -5,6 +5,8 @@ import javax.annotation.Nullable;
 import com.mic.betterslimes.BetterSlimes;
 import com.mic.betterslimes.entity.EntityBetterSlime;
 
+import net.minecraft.client.particle.ParticleBreaking;
+import net.minecraft.init.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -23,7 +25,7 @@ public class BlueSlime extends EntityBetterSlime {
 
 	@Override
 	protected EntityBetterSlime createInstance() {
-		
+
 		return new BlueSlime(this.world);
 	}
 
@@ -42,11 +44,10 @@ public class BlueSlime extends EntityBetterSlime {
 			return false;
 		}
 	}
-	
+
 	@Nullable
-    protected ResourceLocation getLootTable()
-    {
-        return this.getSlimeSize() == 1 ? BetterSlimes.blueSlimeLT : LootTableList.EMPTY;
-    }
+	protected ResourceLocation getLootTable() {
+		return this.getSlimeSize() == 1 ? BetterSlimes.blueSlimeLT : LootTableList.EMPTY;
+	}
 
 }

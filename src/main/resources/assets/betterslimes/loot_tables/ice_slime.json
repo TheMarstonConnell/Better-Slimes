@@ -1,12 +1,12 @@
 {
     "pools": [
         {
-            "name": "iron_slime",
+            "name": "ice_slime",
             "rolls": 2,
             "entries": [
                 {
                     "type": "item",
-                    "name": "betterslimes:red_slime",
+                    "name": "betterslimes:blue_slime",
                     "weight": 8,
                     "functions": [
                         {
@@ -27,7 +27,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:iron_nugget",
+                    "name": "minecraft:ice",
                     "weight": 4,
                     "functions": [
                         {
@@ -48,7 +48,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:iron_ingot",
+                    "name": "minecraft:packed_ice",
                     "weight": 3,
                     "functions": [
                         {

@@ -1,12 +1,12 @@
 {
     "pools": [
         {
-            "name": "iron_slime",
+            "name": "jungle_slime",
             "rolls": 2,
             "entries": [
                 {
                     "type": "item",
-                    "name": "betterslimes:red_slime",
+                    "name": "minecraft:slime_ball",
                     "weight": 8,
                     "functions": [
                         {
@@ -27,7 +27,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:iron_nugget",
+                    "name": "minecraft:vine",
                     "weight": 4,
                     "functions": [
                         {
@@ -48,7 +48,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "minecraft:iron_ingot",
+                    "name": "minecraft:gold_nugget",
                     "weight": 3,
                     "functions": [
                         {

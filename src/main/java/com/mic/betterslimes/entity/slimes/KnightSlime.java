@@ -22,12 +22,12 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.BiomeDictionary;
 
-public class IronSlime extends EntityBetterSlime implements ISpecialSlime{
+public class KnightSlime extends EntityBetterSlime implements ISpecialSlime{
 
-	public IronSlime(World worldIn) {
+	public KnightSlime(World worldIn) {
 		super(worldIn);
 		this.setAttackModifier(2);
-		this.setHealthModifier(4);
+		this.setHealthModifier(2);
 	}
 	
 	@Override
@@ -38,7 +38,7 @@ public class IronSlime extends EntityBetterSlime implements ISpecialSlime{
 
 	@Override
 	protected EntityBetterSlime createInstance() {
-		return new IronSlime(this.world);
+		return new KnightSlime(this.world);
 	}
 
 	@Override
@@ -48,10 +48,7 @@ public class IronSlime extends EntityBetterSlime implements ISpecialSlime{
 			return false;
 		} else {
 			if (this.world.getDifficulty() != EnumDifficulty.PEACEFUL) {
-
-				if (this.posY < 58 && this.posY > 2) {
-					return true;
-				}
+				return true;
 
 			}
 
@@ -66,9 +63,10 @@ public class IronSlime extends EntityBetterSlime implements ISpecialSlime{
 //		return EnumParticleTypes.BLOCK_CRACK;
 //	}
 	
+	
 	@Override
 	protected SoundEvent getSquishSound() {
-		return SoundEvents.BLOCK_ANVIL_PLACE;
+		return SoundEvents.ITEM_ARMOR_EQUIP_IRON;
 	}
 	
 	@Override
@@ -85,6 +83,6 @@ public class IronSlime extends EntityBetterSlime implements ISpecialSlime{
 	@Nullable
     protected ResourceLocation getLootTable()
     {
-        return this.getSlimeSize() == 1 ? BetterSlimes.ironSlimeLT : LootTableList.EMPTY;
+        return this.getSlimeSize() == 1 ? BetterSlimes.knightSlimeLT : LootTableList.EMPTY;
     }
 }

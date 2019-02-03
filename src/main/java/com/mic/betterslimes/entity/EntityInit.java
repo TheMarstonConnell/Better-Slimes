@@ -29,7 +29,7 @@ public class EntityInit {
 	}
 
 	public static void registerEntity() {
-		int view = 45;
+		int view = 60;
 
 		registerEntity("blue_slime", BlueSlime.class, 111, view, 1186255, 255);
 		registerEntity("red_slime", RedSlime.class, 112, view, 12072506, 16711680);
@@ -43,6 +43,8 @@ public class EntityInit {
 		registerEntity("king_slime", KingSlime.class, 120, view, 1186255, 16776960);
 		registerEntity("iron_slime", IronSlime.class, 121, view, 7172208, 11382677);
 		registerEntity("gold_slime", GoldSlime.class, 122, view, 14404608, 16776960);
+		registerEntity("knight_slime", KnightSlime.class, 123, view, 7172208, 255);
+		registerEntity("haunted_slime", HauntedSlime.class, 124, view, 12072506, 000000);
 
 		addToBiomes();
 	}
@@ -54,7 +56,9 @@ public class EntityInit {
 		EntityRegistry.addSpawn(JungleSlime.class, ConfigHandler.jungleSlime, 1, 6, EnumCreatureType.MONSTER, Biomes.JUNGLE_HILLS);
 		EntityRegistry.addSpawn(JungleSlime.class, ConfigHandler.jungleSlime, 1, 6, EnumCreatureType.MONSTER, Biomes.MUTATED_JUNGLE);
 		EntityRegistry.addSpawn(JungleSlime.class, ConfigHandler.jungleSlime, 1, 6, EnumCreatureType.MONSTER, Biomes.MUTATED_JUNGLE_EDGE);
-
+		
+		EntityRegistry.addSpawn(HauntedSlime.class, ConfigHandler.skySlime, 1, 1, EnumCreatureType.MONSTER, Biomes.HELL);	
+		
 		EntityRegistry.addSpawn(SpectralSlime.class, ConfigHandler.skySlime, 1, 1, EnumCreatureType.MONSTER, Biomes.SKY);
 		
 		for (Biome b : BiomeDictionary.getBiomes(BiomeDictionary.Type.SNOWY)) {
@@ -76,6 +80,7 @@ public class EntityInit {
 				EntityRegistry.addSpawn(BlackSlime.class, ConfigHandler.blackSlime, 1, 6, EnumCreatureType.MONSTER, b);
 				EntityRegistry.addSpawn(IronSlime.class, ConfigHandler.ironSlime, 1, 2, EnumCreatureType.MONSTER, b);
 				EntityRegistry.addSpawn(GoldSlime.class, ConfigHandler.goldSlime, 1, 3, EnumCreatureType.MONSTER, b);
+				EntityRegistry.addSpawn(KnightSlime.class, ConfigHandler.knightSlime, 1, 7, EnumCreatureType.MONSTER, b);
 
 			}
 		}

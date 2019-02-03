@@ -7,7 +7,10 @@ import com.mic.betterslimes.entity.EntityBetterSlime;
 import com.mic.betterslimes.entity.ISpecialSlime;
 
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
@@ -40,7 +43,18 @@ public class SpectralSlime extends EntityBetterSlime implements ISpecialSlime{
 			return false;
 		}
 	}
+	
+	@Override
+	protected EnumParticleTypes getParticleType() {
+		
+		return EnumParticleTypes.DRAGON_BREATH;
+	}
 
+	@Override
+	protected SoundEvent getSquishSound() {
+		return SoundEvents.ITEM_ELYTRA_FLYING;
+	}
+	
 	@Override
 	protected int getAttackStrength() {
 		return (int) (super.getAttackStrength() * attackMod);

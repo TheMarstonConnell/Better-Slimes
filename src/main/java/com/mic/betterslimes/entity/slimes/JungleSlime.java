@@ -67,7 +67,7 @@ public class JungleSlime extends EntityBetterSlime implements ISpecialSlime{
 	@Nullable
     protected ResourceLocation getLootTable()
     {
-        return this.getSlimeSize() == 1 ? LootTableList.ENTITIES_SLIME : LootTableList.EMPTY;
+        return this.getSlimeSize() == 1 ? BetterSlimes.jungleSlimeLT : LootTableList.EMPTY;
     }
 
 }

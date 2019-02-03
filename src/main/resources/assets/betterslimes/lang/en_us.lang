@@ -11,6 +11,7 @@ entity.spectral_slime.name=Spectral Slime
 entity.iron_slime.name=Iron Slime
 entity.gold_slime.name=Gold Slime
 entity.knight_slime.name=Knight Slime
+entity.haunted_slime.name=Haunted Slime
 
 item.blue_slime.name=Blue Slimeball
 item.red_slime.name=Red Slimeball

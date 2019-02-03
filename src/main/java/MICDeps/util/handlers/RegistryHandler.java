@@ -1,6 +1,7 @@
 package MICDeps.util.handlers;
 
 import java.util.List;
+import java.util.Random;
 
 import com.mic.betterslimes.entity.EntityBetterSlime;
 import com.mic.betterslimes.entity.ISpecialSlime;
@@ -38,7 +39,6 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import scala.util.Random;
 
 public class RegistryHandler {
 

@@ -8,9 +8,11 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
@@ -43,6 +45,13 @@ public class ClientProxy extends CommonProxy {
 				event.player.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 2.5F, 1.0F);
 			}
 		}
+
+	}
+	
+	
+	@Override
+	public void spawnParticle(World worldIn, EnumParticleTypes types, double posX, double posY, double posZ, double d1, double d2, double d3) {
+		worldIn.spawnParticle(types, posX, posY, posZ, 0, 0, 0);
 
 	}
 

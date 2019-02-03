@@ -6,7 +6,9 @@ import MICDeps.util.handlers.RegistryHandler;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.text.translation.I18n;
+import net.minecraft.world.World;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -40,8 +42,17 @@ public class CommonProxy {
 
 	}
 	
+	
+	
 	@EventHandler
 	public void serverInit(FMLServerStartingEvent event) {
 		RegistryHandler.serverRegistries(event);
 	}
+
+	public void spawnParticle(World worldIn, EnumParticleTypes types, double posX, double posY, double posZ, double d1,
+			double d2, double d3) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

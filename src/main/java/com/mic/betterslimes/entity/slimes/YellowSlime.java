@@ -58,9 +58,8 @@ public class YellowSlime extends EntityBetterSlime{
             if (this.world.getDifficulty() != EnumDifficulty.PEACEFUL)
             {
             	
-            	if(this.posY < 68) {
             		return true;
-            	}
+            	
 
             }
 

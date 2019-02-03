@@ -98,6 +98,18 @@ public class RenderHandler {
 					return new RenderSlime(modID, "gold_slime", manager);
 				}
 			});
+			RenderingRegistry.registerEntityRenderingHandler(KnightSlime.class, new IRenderFactory<KnightSlime>() {
+				@Override
+				public Render<? super KnightSlime> createRenderFor(RenderManager manager) {
+					return new RenderSlime(modID, "knight_slime", manager);
+				}
+			});
+			RenderingRegistry.registerEntityRenderingHandler(HauntedSlime.class, new IRenderFactory<HauntedSlime>() {
+				@Override
+				public Render<? super HauntedSlime> createRenderFor(RenderManager manager) {
+					return new RenderSlime(modID, "haunted_slime", manager);
+				}
+			});
 		
 		
 		

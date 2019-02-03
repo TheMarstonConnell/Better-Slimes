@@ -9,8 +9,10 @@ import com.mic.betterslimes.entity.ISpecialSlime;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.Biomes;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.EnumDifficulty;
@@ -64,6 +66,10 @@ public class GoldSlime extends EntityBetterSlime implements ISpecialSlime{
 //		return EnumParticleTypes.BLOCK_CRACK;
 //	}
 	
+	@Override
+	protected SoundEvent getSquishSound() {
+		return SoundEvents.ITEM_ARMOR_EQUIP_GOLD;
+	}
 	
 	@Override
 	protected int getAttackStrength() {

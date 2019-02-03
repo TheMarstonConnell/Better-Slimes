@@ -1,7 +1,5 @@
 package com.mic.betterslimes.entity.slimes;
 
-import java.util.Random;
-
 import javax.annotation.Nullable;
 
 import com.mic.betterslimes.BetterSlimes;
@@ -65,7 +63,6 @@ public class KingSlime extends EntityBetterSlime implements ISpecialSlime{
 	
 	@Override
 	protected void updateAITasks() {
-		Random rand = new Random();
 		if (this.getSpawnTime() > 0) {
 			int j1 = this.getSpawnTime() - 1;
 
@@ -74,9 +71,9 @@ public class KingSlime extends EntityBetterSlime implements ISpecialSlime{
 				for(int x = 0; x < 10; x ++)
 	            world.spawnParticle(EnumParticleTypes.SLIME, this.posX, this.getEntityBoundingBox().minY, this.posY, 0.0D, 0.0D, 0.0D);
 //				this.world.spawnParticle(EnumParticleTypes.SLIME, this.posX, this.posY, this.posZ, 0, 0, 0);
-				BlueSlime b;
+				KnightSlime b;
 				for (int x = 0; x < 4; x++) {
-					b = new BlueSlime(this.world);
+					b = new KnightSlime(this.world);
 					b.setSlimeSize(2, true);
 					b.setLocationAndAngles(this.posX + rand.nextInt(10) - 5, this.posY + rand.nextInt(1) + 1,
 							this.posZ + rand.nextInt(10) - 5, this.rotationYaw, this.rotationPitch);

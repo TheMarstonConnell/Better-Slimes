@@ -25,7 +25,8 @@ public class ConfigHandler {
 	public static int kingChance = 5;
 	public static int ironSlime = 40;
 	public static int goldSlime = 20;
-	public static int knightSlime = 10;
+	public static int knightSlime = 6;
+	public static int splitChance = 50;
 
 
 	public ConfigHandler(ModBase mod, String modID) {
@@ -43,7 +44,8 @@ public class ConfigHandler {
 
 		startupMessage = config.getBoolean("Start-Up Message?", category, true, "Give a start-up thank you?");
 		kingChance = config.getInt("King Slime Spawn Chance", category, 5, 0, 100, "0 for never and 100 for every night.");
-		
+		splitChance = config.getInt("Slime Splitting Chance", category, 50, 0, 100, "0 for never and 100 for always.");
+
 		
 		category = "Slime Spawn Chances";
 		
@@ -58,7 +60,7 @@ public class ConfigHandler {
 		skySlime = config.getInt("Spectral Slime Spawn Chance", category, 12, 0, 100, "0 for never and 100 for always.");
 		ironSlime = config.getInt("Iron Slime Spawn Chance", category, 40, 0, 100, "0 for never and 100 for always.");
 		goldSlime = config.getInt("Gold Slime Spawn Chance", category, 20, 0, 100, "0 for never and 100 for always.");
-		knightSlime = config.getInt("Knight Slime Spawn Chance", category, 10, 0, 100, "0 for never and 100 for always.");
+		knightSlime = config.getInt("Knight Slime Spawn Chance", category, 6, 0, 100, "0 for never and 100 for always.");
 
 		
 		config.save();

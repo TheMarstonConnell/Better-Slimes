@@ -7,8 +7,10 @@ import com.mic.betterslimes.entity.EntityBetterSlime;
 import com.mic.betterslimes.entity.ISpecialSlime;
 
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
 
@@ -26,6 +28,11 @@ public class IceSlime extends EntityBetterSlime implements ISpecialSlime{
     {
         return new IceSlime(this.world);
     }
+	
+	@Override
+	protected SoundEvent getSquishSound() {
+		return SoundEvents.BLOCK_SNOW_BREAK;
+	}
 	
 	@Override
 	protected int getAttackStrength() {
@@ -48,7 +55,7 @@ public class IceSlime extends EntityBetterSlime implements ISpecialSlime{
 	@Nullable
     protected ResourceLocation getLootTable()
     {
-        return this.getSlimeSize() == 1 ? BetterSlimes.blueSlimeLT : LootTableList.EMPTY;
+        return this.getSlimeSize() == 1 ? BetterSlimes.iceSlimeLT : LootTableList.EMPTY;
     }
 
 }
