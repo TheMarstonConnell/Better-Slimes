@@ -81,7 +81,7 @@ public class RegistryHandler {
 				if (event.side.isServer()) {
 					List<EntityPlayer> e = event.world.playerEntities;
 					
-					if (e.size() < 1) {
+					if (e.size() >= 1) {
 						Random rand = new Random();
 						EntityPlayer p = e.get(rand.nextInt(e.size()));
 
